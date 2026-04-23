@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden VIP | Recepciones y Eventos Sociales</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#AA8C2C',
+                        },
+                        night: {
+                            DEFAULT: '#0a0a12',
+                            light: '#1a1a2e',
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['Cinzel', 'serif'],
+                        'sans': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for extra flair */
+        .glass-nav {
+            background: rgba(10, 10, 18, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(10,10,18,0.7) 0%, rgba(10,10,18,0.9) 100%);
+        }
+
+        .gold-text-gradient {
+            background: linear-gradient(to right, #D4AF37, #F3E5AB, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gold-border {
+            border: 1px solid #D4AF37;
+        }
+
+        .hover-gold:hover {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-sans bg-night text-gray-200 antialiased selection:bg-gold selection:text-night">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo area -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <!-- Text Logo as fallback for the golden G -->
+                    <span class="font-serif text-3xl font-bold tracking-wider gold-text-gradient">Golden VIP</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Inicio</a>
+                    <a href="#nosotros" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Nosotros</a>
+                    <a href="#servicios" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Servicios</a>
+                    <a href="#galeria" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Galería</a>
+                    <a href="#contacto" class="px-6 py-2 border border-gold text-gold hover:bg-gold hover:text-night transition-colors rounded-sm uppercase tracking-widest text-sm font-semibold">Contactar</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gold focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-night-light border-b border-gold/20">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#inicio" class="block px-3 py-2 text-base uppercase tracking-widest hover:text-gold">Inicio</a>
+                <a href="#nosotros" class="block px-3 py-2 text-base uppercase tracking-widest hover:text-gold">Nosotros</a>
+                <a href="#servicios" class="block px-3 py-2 text-base uppercase tracking-widest hover:text-gold">Servicios</a>
+                <a href="#galeria" class="block px-3 py-2 text-base uppercase tracking-widest hover:text-gold">Galería</a>
+                <a href="#contacto" class="block px-3 py-2 text-base uppercase tracking-widest text-gold font-bold">Contactar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Slider -->
+        <div id="hero-slider" class="absolute inset-0 w-full h-full z-0">
+            <!-- Slide 1: Amplio local y techo estrellado (Basado en tus fotos del techo) -->
+            <div class="slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-100">
+                <img src="https://images.unsplash.com/photo-1519167758481-83f540a28b27?auto=format&fit=crop&w=1920&q=80" alt="Pista de baile y techo estrellado" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 hero-overlay"></div>
+            </div>
+            <!-- Slide 2: Banda en vivo en tarima (Basado en la foto de los músicos) -->
+            <div class="slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0">
+                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1920&q=80" alt="Banda en vivo en escenario" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 hero-overlay"></div>
+            </div>
+            <!-- Slide 3: Detalles elegantes y graduaciones (Basado en las tortas) -->
+            <div class="slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0">
+                <img src="https://images.unsplash.com/photo-1530103862676-de8892ebe6bd?auto=format&fit=crop&w=1920&q=80" alt="Eventos elegantes y mesas" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 hero-overlay"></div>
+            </div>
+            <!-- Slide 4: Coctelería (Basado en la foto de los vasos con naranja) -->
+            <div class="slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0">
+                <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1920&q=80" alt="Cocteles exclusivos" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 hero-overlay"></div>
+            </div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+            <h2 class="text-gold tracking-[0.3em] uppercase text-sm md:text-base font-semibold mb-4">Recepción y Eventos Sociales</h2>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                Tienes un evento <br/> <span class="gold-text-gradient">Inolvidable</span> pronto
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
+                Organice eventos majestuosos en nuestro lugar elegante y flexible, perfecto para bodas, quinceaños, graduaciones y reuniones corporativas.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contacto" class="bg-gold text-night px-8 py-4 rounded-sm font-semibold uppercase tracking-widest hover:bg-gold-light transition-colors">
+                    Solicitar Cotización
+                </a>
+                <a href="#galeria" class="border border-gold text-gold px-8 py-4 rounded-sm font-semibold uppercase tracking-widest hover:bg-gold/10 transition-colors">
+                    Ver Instalaciones
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+            <a href="#nosotros" class="text-gold opacity-70 hover:opacity-100">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Nosotros Section -->
+    <section id="nosotros" class="py-24 bg-night">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 border-2 border-gold/30 rounded-sm transform translate-x-4 translate-y-4"></div>
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="Decoración elegante Golden VIP" class="relative z-10 w-full h-[500px] object-cover rounded-sm shadow-2xl" />
+                </div>
+                <div>
+                    <h3 class="text-gold tracking-[0.2em] uppercase text-sm font-semibold mb-2">Exclusividad a tu alcance</h3>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6">El Escenario Perfecto</h2>
+                    <p class="text-gray-400 mb-6 leading-relaxed font-light">
+                        En <strong class="text-gold font-normal">Golden VIP</strong>, entendemos que cada detalle cuenta. Contamos con un local sumamente amplio, diseñado para adaptarse a la magnitud de tus sueños. Nuestro icónico techo con iluminación estrellada y nuestras elegantes arañas de cristal crean una atmósfera mágica e inigualable.
+                    </p>
+                    <p class="text-gray-400 mb-8 leading-relaxed font-light">
+                        Desde amplias pistas de baile hasta escenarios profesionales preparados para bandas en vivo, te ofrecemos un espacio versátil, sofisticado y equipado con la mejor tecnología en iluminación y sonido.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-map-marked-alt text-2xl text-gold mt-1"></i>
+                            <div>
+                                <h4 class="text-white font-semibold">Local Amplio</h4>
+                                <p class="text-sm text-gray-500">Capacidad para grandes aforos con total comodidad.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-star text-2xl text-gold mt-1"></i>
+                            <div>
+                                <h4 class="text-white font-semibold">Techo Estrellado</h4>
+                                <p class="text-sm text-gray-500">Iluminación inmersiva para una noche mágica.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="py-24 bg-night-light border-y border-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-gold tracking-[0.2em] uppercase text-sm font-semibold mb-2">Nuestra Oferta</h3>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-white">Servicios Especializados</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-night p-8 border border-gold/20 rounded-sm hover-gold group">
+                    <i class="fas fa-rings text-4xl text-gold mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-serif font-bold text-white mb-3">Bodas de Ensueño</h3>
+                    <p class="text-gray-400 text-sm font-light">
+                        Espacios románticos con mesas finamente decoradas, cristalería de lujo y una pista de baile deslumbrante para tu primer baile.
+                    </p>
+                </div>
+                <!-- Servicio 2 -->
+                <div class="bg-night p-8 border border-gold/20 rounded-sm hover-gold group">
+                    <i class="fas fa-graduation-cap text-4xl text-gold mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-serif font-bold text-white mb-3">Graduaciones</h3>
+                    <p class="text-gray-400 text-sm font-light">
+                        Celebra tus logros por todo lo alto. Escenarios iluminados y áreas amplias para compartir con todos tus seres queridos.
+                    </p>
+                </div>
+                <!-- Servicio 3 -->
+                <div class="bg-night p-8 border border-gold/20 rounded-sm hover-gold group">
+                    <i class="fas fa-music text-4xl text-gold mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-serif font-bold text-white mb-3">Conciertos y Shows</h3>
+                    <p class="text-gray-400 text-sm font-light">
+                        Tarima profesional equipada con sistema de sonido line array e iluminación espectacular para orquestas y bandas en vivo.
+                    </p>
+                </div>
+                <!-- Servicio 4 -->
+                <div class="bg-night p-8 border border-gold/20 rounded-sm hover-gold group">
+                    <i class="fas fa-glass-martini-alt text-4xl text-gold mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-serif font-bold text-white mb-3">Coctelería y Catering</h3>
+                    <p class="text-gray-400 text-sm font-light">
+                        Barras iluminadas, tragos exclusivos, y detalles en cada mesa. Mantelería bordada con nuestro sello de calidad Golden VIP.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería Section -->
+    <section id="galeria" class="py-24 bg-night">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h3 class="text-gold tracking-[0.2em] uppercase text-sm font-semibold mb-2">Instalaciones</h3>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-white">Nuestra Galería</h2>
+                </div>
+                <p class="text-gray-400 max-w-md md:text-right mt-4 md:mt-0 font-light text-sm">
+                    Un vistazo a la magia que ocurre dentro de Golden VIP. Cada rincón está diseñado para la excelencia.
+                </p>
+            </div>
+
+            <!-- Grid de imágenes -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Imagen 1: Amplio local y techo -->
+                <div class="relative group overflow-hidden h-80 rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80" alt="Pista de baile y techo estrellado" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-gold font-serif text-xl border-b border-gold pb-1">Amplitud y Elegancia</span>
+                    </div>
+                </div>
+                <!-- Imagen 2: Tarima y Banda -->
+                <div class="relative group overflow-hidden h-80 rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=800&q=80" alt="Banda tocando en vivo" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-gold font-serif text-xl border-b border-gold pb-1">Escenario Profesional</span>
+                    </div>
+                </div>
+                <!-- Imagen 3: Graduaciones/Tortas -->
+                <div class="relative group overflow-hidden h-80 rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80" alt="Decoración de graduación" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-gold font-serif text-xl border-b border-gold pb-1">Graduaciones</span>
+                    </div>
+                </div>
+                <!-- Imagen 4: Cocteles -->
+                <div class="relative group overflow-hidden h-80 rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80" alt="Cocteles en barra" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-gold font-serif text-xl border-b border-gold pb-1">Barra Exclusiva</span>
+                    </div>
+                </div>
+                <!-- Imagen 5: Detalles de mesa/Velas -->
+                <div class="relative group overflow-hidden h-80 rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=800&q=80" alt="Detalles en mesas y velas" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-gold font-serif text-xl border-b border-gold pb-1">Detalles Únicos</span>
+                    </div>
+                </div>
+                <!-- Imagen 6: Entrada/Decoración general -->
+                <div class="relative group overflow-hidden h-80 rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80" alt="Decoración de techos y telas" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-gold font-serif text-xl border-b border-gold pb-1">Espacios Mágicos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Llamado a la Acción -->
+    <section class="py-20 relative bg-gold-dark overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-serif text-4xl md:text-5xl font-bold text-night mb-6">¿Listo para comenzar a planear?</h2>
+            <p class="text-night/80 text-lg mb-8 font-medium">Nuestro equipo de expertos está listo para convertir tu visión en una realidad impresionante.</p>
+            <a href="https://wa.me/51989956591" target="_blank" class="inline-flex items-center gap-2 bg-night text-gold px-8 py-4 rounded-sm font-bold uppercase tracking-widest hover:bg-black transition-colors shadow-xl">
+                <i class="fab fa-whatsapp text-xl"></i> Chatea con nosotros
+            </a>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="py-24 bg-night-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Info de Contacto -->
+                <div>
+                    <h3 class="text-gold tracking-[0.2em] uppercase text-sm font-semibold mb-2">Hablemos</h3>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-white mb-8">Reserva tu fecha</h2>
+                    <p class="text-gray-400 mb-10 font-light leading-relaxed">
+                        Ponte en contacto con nosotros para verificar la disponibilidad, consultar nuestros paquetes y agendar una visita guiada por nuestras majestuosas instalaciones.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full border border-gold flex items-center justify-center text-gold">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm text-gray-500 uppercase tracking-wider">Teléfono</h4>
+                                <p class="text-white text-lg">989 956 591</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full border border-gold flex items-center justify-center text-gold">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm text-gray-500 uppercase tracking-wider">Email</h4>
+                                <p class="text-white text-lg">eventos@goldenvip.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full border border-gold flex items-center justify-center text-gold">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm text-gray-500 uppercase tracking-wider">Ubicación</h4>
+                                <p class="text-white text-lg">Visita nuestro gran local (Previa cita)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Redes Sociales -->
+                    <div class="mt-12">
+                        <h4 class="text-sm text-gold uppercase tracking-wider mb-4">Síguenos</h4>
+                        <div class="flex gap-4">
+                            <a href="#" class="w-10 h-10 rounded-sm bg-night flex items-center justify-center text-white hover:bg-gold hover:text-night transition-colors border border-gray-800">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-sm bg-night flex items-center justify-center text-white hover:bg-gold hover:text-night transition-colors border border-gray-800">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-sm bg-night flex items-center justify-center text-white hover:bg-gold hover:text-night transition-colors border border-gray-800">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="bg-night p-8 lg:p-10 rounded-sm border border-gold/20 shadow-2xl">
+                    <h3 class="font-serif text-2xl text-white mb-6">Envíanos un mensaje</h3>
+                    <form onsubmit="event.preventDefault(); alert('Mensaje de prueba enviado. Esta es una demostración.');" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">Nombre Completo</label>
+                                <input type="text" class="w-full bg-night-light border border-gray-800 focus:border-gold text-white px-4 py-3 rounded-sm outline-none transition-colors" placeholder="Tu nombre" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">Teléfono</label>
+                                <input type="tel" class="w-full bg-night-light border border-gray-800 focus:border-gold text-white px-4 py-3 rounded-sm outline-none transition-colors" placeholder="Tu celular" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">Tipo de Evento</label>
+                            <select class="w-full bg-night-light border border-gray-800 focus:border-gold text-white px-4 py-3 rounded-sm outline-none transition-colors appearance-none">
+                                <option value="">Selecciona una opción</option>
+                                <option value="boda">Boda</option>
+                                <option value="xv">Quinceaños (XV)</option>
+                                <option value="graduacion">Graduación</option>
+                                <option value="concierto">Concierto / Show</option>
+                                <option value="corporativo">Evento Corporativo</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">Fecha Estimada</label>
+                            <input type="date" class="w-full bg-night-light border border-gray-800 focus:border-gold text-white px-4 py-3 rounded-sm outline-none transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">Mensaje o Detalles Adicionales</label>
+                            <textarea rows="4" class="w-full bg-night-light border border-gray-800 focus:border-gold text-white px-4 py-3 rounded-sm outline-none transition-colors" placeholder="Cuéntanos más sobre tu evento..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gold text-night font-bold uppercase tracking-widest py-4 rounded-sm hover:bg-gold-light transition-colors">
+                            Enviar Consulta
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-2xl font-serif font-bold gold-text-gradient">Golden VIP</div>
+            <p class="text-gray-500 text-sm">© 2026 Golden VIP Eventos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Flotante WhatsApp -->
+    <a href="https://wa.me/51989956591" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_0_15px_rgba(37,211,102,0.5)] hover:scale-110 transition-transform z-50">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Simple Script para el menú móvil y navbar color -->
+    <script>
+        // Menu Móvil
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Navbar bg en scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-night', 'shadow-lg');
+                nav.classList.remove('glass-nav');
+            } else {
+                nav.classList.remove('bg-night', 'shadow-lg');
+                nav.classList.add('glass-nav');
+            }
+        });
+
+        // Lógica del Slider del Hero
+        const slides = document.querySelectorAll('.slide');
+        if (slides.length > 0) {
+            let currentSlide = 0;
+            setInterval(() => {
+                // Ocultar slide actual
+                slides[currentSlide].classList.remove('opacity-100');
+                slides[currentSlide].classList.add('opacity-0');
+                
+                // Avanzar al siguiente (y volver a cero si llega al final)
+                currentSlide = (currentSlide + 1) % slides.length;
+                
+                // Mostrar nuevo slide
+                slides[currentSlide].classList.remove('opacity-0');
+                slides[currentSlide].classList.add('opacity-100');
+            }, 5000); // Cambia cada 5 segundos
+        }
+    </script>
+</body>
+</html>
